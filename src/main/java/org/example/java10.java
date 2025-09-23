@@ -11,7 +11,5 @@ public class java10 {
         list.add(2);
         list.add(3);
         list.stream().forEach(System.out::println);
-
-
     }
 }
