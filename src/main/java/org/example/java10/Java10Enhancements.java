@@ -1,8 +1,8 @@
-package org.example;
+package org.example.java10;
 
 import java.util.ArrayList;
 
-public class java10 {
+public class Java10Enhancements {
     public static void main(String[] args) {
 
         //addition of var local variable
