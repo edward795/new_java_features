@@ -1,6 +1,10 @@
 package org.example.java19;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.util.concurrent.*;
+
+import static java.lang.foreign.ValueLayout.JAVA_INT;
 
 public class Java19Enhancements {
     public static void main(String[] args) {
@@ -28,6 +32,13 @@ public class Java19Enhancements {
             throw new RuntimeException(e);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
+        }
+
+        //Foreign Memory API
+        try(Arena arena=Arena.ofConfined()){
+            MemorySegment memorySegment=arena.allocate(JAVA_INT);
+            memorySegment.set(JAVA_INT,0,42);
+            System.out.println(memorySegment.get(JAVA_INT,0));
         }
     }
 
