@@ -75,20 +75,19 @@ public class Java21Enhancements {
        process((Point) obj);
 
         //string templates
-        int age=25;
-        String name="Ayyappadas";
-        String msg=STR."Hello \{name},you are \{age} years old";
-        System.out.println(msg);
+//        int age=25;
+//        String name="Ayyappadas";
+//        String msg=STR."Hello \{name},you are \{age} years old";
+//        System.out.println(msg);
     }
 
 
     static String formatter(Object obj) {
         return switch (obj) {
-            case Integer i -> "int " + i;
-            case String s when s.length() > 5 ? "long string" : s
-                ;
-                case null -> "nulll";
-                default -> "other";
+            case String s when s.length() > 5 -> "long string";
+            case String s -> s;
+            case null      -> "null";
+            default        -> "other";
         };
     }
 
